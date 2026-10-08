@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FitForge: gerador de treinos personalizados." />
+    <title>FitForge — Seu treino. Seu ritmo.</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" data-testid="app-header">
+      <a href="#inicio" class="brand" data-testid="nav-brand-logo"><span class="brand-mark">↯</span> FIT<span>FORGE</span></a>
+      <nav class="nav-links" data-testid="desktop-navigation">
+        <a href="#gerador" data-testid="nav-generator-link">Gerador</a>
+        <a href="#plano" data-testid="nav-plan-link">Meu plano</a>
+        <a href="#metodo" data-testid="nav-method-link">Método</a>
+      </nav>
+      <button class="button button-primary button-small" data-scroll="#gerador" data-testid="header-start-button">Começar ↗</button>
+    </header>
+
+    <main id="inicio" class="container">
+      <section class="hero" data-testid="hero-section">
+        <div class="hero-image" data-testid="hero-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="eyebrow lime" data-testid="hero-badge">✦ PLANEJE. EXECUTE. EVOLUA.</span>
+          <h1 data-testid="hero-heading">Seu treino.<br /><strong>Seu ritmo.</strong></h1>
+          <p data-testid="hero-description">Um gerador que entende sua rotina, seu objetivo e o equipamento que você tem. Menos dúvida. Mais consistência.</p>
+          <div class="hero-actions" data-testid="hero-actions">
+            <button class="button button-primary button-large" data-scroll="#gerador" data-testid="hero-cta-button">Montar meu treino <span>›</span></button>
+            <span class="hero-note" data-testid="hero-note">◈ Sem fórmulas genéricas</span>
+          </div>
+        </div>
+        <div class="hero-stats" data-testid="hero-stats"><div><strong>4.8k</strong><span>treinos montados</span></div><div><strong>8 min</strong><span>para começar</span></div></div>
+      </section>
+
+      <section id="gerador" class="section generator-section" data-testid="generator-section">
+        <div class="section-heading"><div><span class="eyebrow lime">01 / Personalize</span><h2>Construa do seu jeito</h2></div><p>Responda o essencial. O FitForge faz o trabalho pesado da programação.</p></div>
+        <div class="generator-layout">
+          <form id="workout-form" class="panel form-panel" data-testid="workout-form">
+            <div class="form-header"><div><span class="label-muted">Seu ponto de partida</span><h3>Vamos calibrar seu plano</h3></div><span class="step-count">2/3</span></div>
+            <fieldset data-testid="goal-fieldset"><legend>Qual é o objetivo da vez?</legend><div class="option-grid two-columns">
+              <button type="button" class="option-card selected" data-choice="goal" data-value="hypertrophy" data-testid="goal-option-hypertrophy"><b>◈ Hipertrofia</b><small>Mais volume e definição</small></button>
+              <button type="button" class="option-card" data-choice="goal" data-value="strength" data-testid="goal-option-strength"><b>♜ Força</b><small>Performance nos básicos</small></button>
+              <button type="button" class="option-card" data-choice="goal" data-value="fat_loss" data-testid="goal-option-fat-loss"><b>⌁ Emagrecimento</b><small>Gasto e consistência</small></button>
+              <button type="button" class="option-card" data-choice="goal" data-value="conditioning" data-testid="goal-option-conditioning"><b>ϟ Condicionamento</b><small>Fôlego para tudo</small></button>
+            </div></fieldset>
+            <fieldset data-testid="level-fieldset"><legend>Qual seu nível?</legend><div class="option-grid three-columns">
+              <button type="button" class="option-card" data-choice="level" data-value="beginner" data-testid="experience-level-beginner"><b>Iniciante</b><small>Estou começando</small></button>
+              <button type="button" class="option-card selected-cyan" data-choice="level" data-value="intermediate" data-testid="experience-level-intermediate"><b>Intermediário</b><small>Já tenho ritmo</small></button>
+              <button type="button" class="option-card" data-choice="level" data-value="advanced" data-testid="experience-level-advanced"><b>Avançado</b><small>Alta performance</small></button>
+            </div></fieldset>
+            <div class="split-fields"><fieldset data-testid="frequency-fieldset"><legend>Dias por semana <output id="days-output">4</output></legend><input id="days" type="range" min="2" max="6" value="4" data-testid="frequency-slider" /><div class="range-labels"><span>2 dias</span><span>6 dias</span></div></fieldset><fieldset data-testid="duration-fieldset"><legend>Tempo disponível</legend><div class="duration-options"> <button type="button" class="duration selected" data-duration="30" data-testid="duration-option-30">30 min</button><button type="button" class="duration" data-duration="45" data-testid="duration-option-45">45 min</button><button type="button" class="duration selected-duration" data-duration="60" data-testid="duration-option-60">60 min</button><button type="button" class="duration" data-duration="90" data-testid="duration-option-90">90 min</button></div></fieldset></div>
+            <fieldset data-testid="equipment-fieldset"><legend>Onde você vai treinar?</legend><div class="option-grid three-columns"><button type="button" class="option-card selected-orange" data-choice="equipment" data-value="full_gym" data-testid="equipment-option-full-gym"><b>▦ Academia completa</b><small>Barras, máquinas e cabos</small></button><button type="button" class="option-card" data-choice="equipment" data-value="dumbbells" data-testid="equipment-option-dumbbells"><b>◉ Halteres + banco</b><small>Treine em qualquer canto</small></button><button type="button" class="option-card" data-choice="equipment" data-value="bodyweight" data-testid="equipment-option-bodyweight"><b>◇ Peso corporal</b><small>Sem equipamentos</small></button></div></fieldset>
+            <div class="split-fields"><label>Foco principal<input id="focus" value="Corpo inteiro" placeholder="Ex.: pernas e glúteos" data-testid="focus-input" /></label><label>Alguma limitação?<textarea id="limitations" rows="1" placeholder="Opcional · Ex.: sem impacto" data-testid="limitations-textarea"></textarea></label></div>
+            <button class="button button-primary button-submit" type="submit" data-testid="generate-workout-submit-btn">✦ Gerar meu treino</button>
+          </form>
+          <aside class="generator-aside"><div class="feature-card" data-testid="algorithm-card"><span class="feature-icon">✦</span><span class="tag">Algoritmo FitForge</span><h3>Treino que<br />se adapta.</h3><p>Volume, intensidade e descanso calculados para você evoluir sem se perder.</p></div><div class="trust-card" data-testid="trust-card"><span class="trust-icon">◈</span><div><b>Estratégia, não improviso</b><small>Princípios de treino aplicados</small></div></div></aside>
+        </div>
+      </section>
+
+      <section id="plano" class="section plan-section" data-testid="plan-section">
+        <div class="section-heading"><div><span class="eyebrow orange">02 / Seu plano</span><h2>A semana começa aqui</h2></div><div class="plan-actions"><button class="button button-outline" id="export-button" data-testid="export-workout-pdf-btn">⇩ Exportar</button><button class="button button-orange" id="active-button" data-testid="start-active-workout-btn">▶ Começar treino</button></div></div>
+        <div class="plan-layout"><aside class="panel plan-overview" data-testid="plan-overview-card"><div class="plan-overview-top"><div><span class="label-muted">Resumo do plano</span><h3 id="plan-title" data-testid="plan-title">Plano hipertrofia · 4 dias</h3></div><span class="trophy">♜</span></div><p id="plan-summary" data-testid="plan-summary">Seu ponto de partida está pronto. Ajuste as preferências e gere um plano sob medida.</p><div class="metrics"><div><small>Divisão</small><b id="metric-split">Upper / Lower</b></div><div><small>Por sessão</small><b id="metric-time">60 min</b></div><div><small>Nível</small><b id="metric-level">Intermediário</b></div><div><small>Exercícios</small><b id="metric-exercises">9 ativos</b></div></div><div class="progress-box"><div><b>Progresso da sessão</b><span id="progress-text">0/3</span></div><div class="progress-track"><i id="progress-bar"></i></div></div></aside><div class="panel planner" data-testid="weekly-planner-card"><div class="planner-header"><div><span class="label-muted">Planner semanal</span><p>Toque em um dia para ver a sessão</p></div><span class="calendar-icon">▦</span></div><div id="day-tabs" class="day-tabs" data-testid="weekly-day-tabs"></div><div id="day-content" data-testid="exercise-list"></div></div></div>
+      </section>
+
+      <section id="metodo" class="section method-section" data-testid="method-section"><div><span class="eyebrow cyan">03 / O método</span><h2>Treinar melhor<br /><em>é treinar com clareza.</em></h2></div><div class="benefits"><div><b>01 · Contexto</b><p>Seu objetivo guia cada escolha do plano.</p></div><div><b>02 · Progressão</b><p>Volume e esforço com espaço para evoluir.</p></div><div><b>03 · Ação</b><p>Uma sessão clara para você executar hoje.</p></div></div></section>
+    </main>
+    <div id="toast" class="toast" role="status" data-testid="toast"></div>
+    <footer data-testid="app-footer"><span>FITFORGE / treino com intenção</span><span>Feito para quem aparece.</span></footer>
+    <script src="main.js"></script>
+  </body>
+</html>
